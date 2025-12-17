@@ -1,2 +1,4 @@
 TREE_UTF8.txt
 
+# Backup files
+*.bak
