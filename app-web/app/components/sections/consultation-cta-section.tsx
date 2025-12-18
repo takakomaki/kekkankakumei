@@ -4,7 +4,7 @@ export function ConsultationCtaSection() {
       <div className="mx-auto w-full max-w-5xl">
         <h2 className="text-2xl font-bold">Consultation CTA Section</h2>
         <p className="mt-4 text-neutral-700">
-          ここは仮の骨格です（後で内容を差し替えます）。
+          まず、あなたの状態を一緒に整理しませんか
         </p>
       </div>
     </section>
