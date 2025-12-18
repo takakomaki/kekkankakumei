@@ -20,19 +20,19 @@ export function HeroSection() {
           <defs>
             {/* Mist-like reveal (stronger near bottom-right) */}
             <radialGradient id="vc-mist" cx="92%" cy="88%" r="78%">
-              <stop offset="0%" stopColor="white" stopOpacity="0.95" />
-              <stop offset="35%" stopColor="white" stopOpacity="0.55" />
-              <stop offset="65%" stopColor="white" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="white" stopOpacity="0" />
+              <stop offset="0%" stopColor="white" stopOpacity="0.98" />
+              <stop offset="35%" stopColor="white" stopOpacity="0.7" />
+              <stop offset="65%" stopColor="white" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="white" stopOpacity="0.08" />
             </radialGradient>
             <mask id="vc-reveal">
               <rect width="1200" height="800" fill="url(#vc-mist)" />
             </mask>
 
             <linearGradient id="vc-gold" x1="1200" y1="800" x2="560" y2="380">
-              <stop offset="0%" stopColor="#B8A178" stopOpacity="0.85" />
-              <stop offset="55%" stopColor="#B8A178" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#B8A178" stopOpacity="0.08" />
+              <stop offset="0%" stopColor="#B8A178" stopOpacity="0.95" />
+              <stop offset="55%" stopColor="#B8A178" stopOpacity="0.48" />
+              <stop offset="100%" stopColor="#B8A178" stopOpacity="0.18" />
             </linearGradient>
 
             <filter id="vc-soft" x="-20%" y="-20%" width="140%" height="140%">
@@ -45,7 +45,7 @@ export function HeroSection() {
             </filter>
           </defs>
 
-          <g mask="url(#vc-reveal)" filter="url(#vc-soft)">
+            <g mask="url(#vc-reveal)" filter="url(#vc-soft)" opacity="0.92">
             {/* Main chart line */}
             <path
               d="M1200 760 L1035 650 L940 575 L860 520 L790 468 L720 420 L640 392 L560 372"
@@ -155,7 +155,7 @@ export function HeroSection() {
           <div className="relative pt-[14svh] sm:pt-[16svh] lg:pt-[18svh]">
             <div className="max-w-[34rem]">
               <h1
-                className="text-[#F2F2F2] font-extralight leading-[2] tracking-[0.3em]"
+                className="text-[#F2F2F2] font-extralight leading-[2] tracking-[0.48em]"
                 style={{
                   fontFamily:
                     '"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS Mincho",serif',
@@ -166,12 +166,12 @@ export function HeroSection() {
                 血管は、あなたの未来の地図。
               </h1>
               <p
-                className="mt-8 text-[#F2F2F2]/72 font-extralight leading-[2] tracking-[0.28em]"
+                className="mt-8 text-[#F2F2F2]/75 font-extralight leading-[2] tracking-[0.3em]"
                 style={{
                   fontFamily:
                     '"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS Mincho",serif',
                   fontWeight: 200,
-                  fontSize: "clamp(12px, 1.05vw, 14px)",
+                  fontSize: "clamp(13px, 1.15vw, 16px)",
                 }}
               >
                 薬に頼り続ける人生に、静かな違和感を覚えているあなたへ。
@@ -183,7 +183,7 @@ export function HeroSection() {
 
       {/* Subtle scroll hint */}
       <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2">
-        <div className="text-[#F2F2F2]/45 font-extralight tracking-[0.35em] text-[10px]">
+        <div className="text-[#F2F2F2]/50 font-extralight tracking-[0.35em] text-[10px]">
           Scroll
         </div>
       </div>
@@ -194,18 +194,19 @@ export function HeroSection() {
           animation-name: vcBreath;
           animation-timing-function: ease-in-out;
           animation-iteration-count: infinite;
-          opacity: 0.25;
-          filter: drop-shadow(0 0 6px rgba(150, 0, 24, 0.35));
+          opacity: 0.48;
+          filter: drop-shadow(0 0 10px rgba(150, 0, 24, 0.55))
+            drop-shadow(0 0 18px rgba(150, 0, 24, 0.25));
         }
         @keyframes vcBreath {
           0%,
           100% {
-            opacity: 0.18;
-            transform: scale(0.92);
+            opacity: 0.35;
+            transform: scale(0.96);
           }
           50% {
             opacity: 1;
-            transform: scale(1.12);
+            transform: scale(1.16);
           }
         }
       `}</style>
