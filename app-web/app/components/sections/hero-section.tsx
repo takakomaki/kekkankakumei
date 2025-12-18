@@ -188,7 +188,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .vc-breath {
           transform-origin: center;
           animation-name: vcBreath;
