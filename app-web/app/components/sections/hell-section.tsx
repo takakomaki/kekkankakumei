@@ -4,7 +4,7 @@ export function HellSection() {
       <div className="mx-auto w-full max-w-5xl">
         <h2 className="text-2xl font-bold">Hell Section</h2>
         <p className="mt-4 text-neutral-700">
-          ここは仮の骨格です（後で内容を差し替えます）。
+         薬が増える／不安が消えない／「このままでいいのか」
         </p>
       </div>
     </section>
