@@ -4,7 +4,7 @@ export function HeroSection() {
       <div className="mx-auto w-full max-w-5xl">
         <h2 className="text-2xl font-bold">Hero Section</h2>
         <p className="mt-4 text-neutral-700">
-          ここは仮の骨格です（後で内容を差し替えます）。
+         薬に頼り続ける人生に、静かな違和感を覚えているあなたへ
         </p>
       </div>
     </section>
