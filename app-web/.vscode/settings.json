@@ -1,0 +1,8 @@
+{
+  // Explorer etc. (Primary Side Bar) on the left
+  "workbench.sideBar.location": "left",
+
+  // Chat etc. (Secondary Side Bar) on the right
+  "workbench.secondarySideBar.location": "right"
+}
+
