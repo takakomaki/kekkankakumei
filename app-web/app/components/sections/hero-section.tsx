@@ -1,4 +1,9 @@
+import { seminar } from "../../content/seminar"
+
 export function HeroSection() {
+  const isApplicationOpen = Boolean(seminar.applicationUrl)
+  const primaryCtaLabel = isApplicationOpen ? "今すぐ申込" : "受付準備中"
+
   return (
     <section
       className="relative isolate w-full overflow-hidden"
@@ -154,6 +159,21 @@ export function HeroSection() {
         <div className="w-full">
           <div className="relative pt-[14svh] sm:pt-[16svh] lg:pt-[18svh]">
             <div className="max-w-[34rem]">
+              <div className="inline-flex items-center gap-3">
+                <span
+                  className="rounded-full border border-[#B8A178]/45 bg-[#B8A178]/10 px-4 py-2 text-[10px] tracking-[0.35em] text-[#F2F2F2]/85"
+                  style={{
+                    fontFamily:
+                      '"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS Mincho",serif',
+                    fontWeight: 200,
+                  }}
+                >
+                  {seminar.title}
+                </span>
+                <span className="text-[10px] tracking-[0.25em] text-[#F2F2F2]/55">
+                  更新 {seminar.updatedAt}
+                </span>
+              </div>
               <h1
                 className="text-[#F2F2F2] font-extralight leading-[2] tracking-[0.48em]"
                 style={{
@@ -176,6 +196,68 @@ export function HeroSection() {
               >
                 薬に頼り続ける人生に、静かな違和感を覚えているあなたへ。
               </p>
+
+              <div className="mt-8 space-y-2 text-[11px] leading-[2] tracking-[0.22em] text-[#F2F2F2]/65">
+                <div>
+                  開催：{seminar.date}／{seminar.time}
+                </div>
+                <div>
+                  形式：{seminar.format}
+                  {seminar.venue ? `（${seminar.venue}）` : ""}
+                </div>
+                <div>
+                  参加費：{seminar.price}／定員：{seminar.capacity}
+                </div>
+              </div>
+
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+                {isApplicationOpen ? (
+                  <a
+                    href={seminar.applicationUrl!}
+                    className="inline-flex h-11 items-center justify-center rounded-full bg-[#B8A178] px-7 text-[11px] tracking-[0.28em] text-[#080A10] transition-colors hover:bg-[#d3c09b]"
+                    style={{
+                      fontFamily:
+                        '"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS Mincho",serif',
+                      fontWeight: 200,
+                    }}
+                  >
+                    {primaryCtaLabel}
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled
+                    className="inline-flex h-11 cursor-not-allowed items-center justify-center rounded-full bg-[#B8A178]/35 px-7 text-[11px] tracking-[0.28em] text-[#080A10]/70"
+                    style={{
+                      fontFamily:
+                        '"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS Mincho",serif',
+                      fontWeight: 200,
+                    }}
+                    aria-disabled="true"
+                    title="申込URLが未確定のため準備中です"
+                  >
+                    {primaryCtaLabel}
+                  </button>
+                )}
+
+                {seminar.lineUrl ? (
+                  <a
+                    href={seminar.lineUrl}
+                    className="inline-flex h-11 items-center justify-center rounded-full border border-[#F2F2F2]/20 bg-[#080A10]/20 px-7 text-[11px] tracking-[0.28em] text-[#F2F2F2] transition-colors hover:border-[#F2F2F2]/35"
+                    style={{
+                      fontFamily:
+                        '"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS Mincho",serif',
+                      fontWeight: 200,
+                    }}
+                  >
+                    まずはLINEで受け取る
+                  </a>
+                ) : (
+                  <span className="text-[10px] tracking-[0.22em] text-[#F2F2F2]/45">
+                    LINE導線は準備中です
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         </div>
