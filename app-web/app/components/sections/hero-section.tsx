@@ -312,11 +312,7 @@ export function HeroSection() {
                   >
                     まずはLINEで受け取る
                   </a>
-                ) : (
-                  <span className="text-[10px] tracking-[0.22em] text-[#F2F2F2]/45">
-                    LINE導線は準備中です
-                  </span>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
