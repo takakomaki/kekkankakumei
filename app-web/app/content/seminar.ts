@@ -44,7 +44,7 @@ export type SeminarInfo = {
  * 未確定項目は null / "未定" を入れておき、UI側で「受付準備中」等に変換します。
  */
 export const seminar: SeminarInfo = {
-  title: "加藤先生セミナー（仮）",
+  title: "加藤雅俊特別セミナー",
   subtitle: "血管からはじめる、薬に頼り続けない未来へ",
 
   applicationUrl: null,

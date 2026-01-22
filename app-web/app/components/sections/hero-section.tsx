@@ -23,40 +23,54 @@ export function HeroSection() {
           aria-label=""
         >
           <defs>
-            {/* Mist-like reveal (stronger near bottom-right) */}
-            <radialGradient id="vc-mist" cx="92%" cy="88%" r="78%">
+            {/* Mist-like reveal (balanced to show up-left too) */}
+            <radialGradient id="vc-mist" cx="62%" cy="56%" r="96%">
               <stop offset="0%" stopColor="white" stopOpacity="0.98" />
-              <stop offset="35%" stopColor="white" stopOpacity="0.7" />
-              <stop offset="65%" stopColor="white" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="white" stopOpacity="0.08" />
+              <stop offset="45%" stopColor="white" stopOpacity="0.78" />
+              <stop offset="82%" stopColor="white" stopOpacity="0.36" />
+              <stop offset="100%" stopColor="white" stopOpacity="0.16" />
             </radialGradient>
             <mask id="vc-reveal">
               <rect width="1200" height="800" fill="url(#vc-mist)" />
             </mask>
 
             <linearGradient id="vc-gold" x1="1200" y1="800" x2="560" y2="380">
-              <stop offset="0%" stopColor="#B8A178" stopOpacity="0.95" />
-              <stop offset="55%" stopColor="#B8A178" stopOpacity="0.48" />
-              <stop offset="100%" stopColor="#B8A178" stopOpacity="0.18" />
+              <stop offset="0%" stopColor="#B8A178" stopOpacity="1" />
+              <stop offset="62%" stopColor="#B8A178" stopOpacity="0.62" />
+              <stop offset="100%" stopColor="#B8A178" stopOpacity="0.26" />
             </linearGradient>
 
             <filter id="vc-soft" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="0.55" result="blur" />
+              <feGaussianBlur stdDeviation="0.7" result="blur" />
               <feColorMatrix
                 in="blur"
                 type="matrix"
                 values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.9 0"
               />
+              <feDropShadow
+                dx="0"
+                dy="0"
+                stdDeviation="2.2"
+                floodColor="#B8A178"
+                floodOpacity="0.28"
+              />
+              <feDropShadow
+                dx="0"
+                dy="0"
+                stdDeviation="7.5"
+                floodColor="#B8A178"
+                floodOpacity="0.14"
+              />
             </filter>
           </defs>
 
-            <g mask="url(#vc-reveal)" filter="url(#vc-soft)" opacity="0.92">
+            <g mask="url(#vc-reveal)" filter="url(#vc-soft)" opacity="0.98">
             {/* Main chart line */}
             <path
-              d="M1200 760 L1035 650 L940 575 L860 520 L790 468 L720 420 L640 392 L560 372"
+              d="M1200 760 L1035 650 L940 575 L860 520 L790 468 L720 420 L640 392 L560 372 L500 332 L450 296 L400 262 L360 232 L320 206 L300 186 L280 166"
               fill="none"
               stroke="url(#vc-gold)"
-              strokeWidth="1"
+              strokeWidth="1.6"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -66,37 +80,19 @@ export function HeroSection() {
               d="M940 575 L900 510 L860 452 L820 410"
               fill="none"
               stroke="url(#vc-gold)"
-              strokeWidth="0.9"
+              strokeWidth="1.15"
               strokeLinecap="round"
               strokeLinejoin="round"
-              opacity="0.8"
+              opacity="0.9"
             />
             <path
               d="M860 520 L900 540 L950 565"
               fill="none"
               stroke="url(#vc-gold)"
-              strokeWidth="0.85"
+              strokeWidth="1.05"
               strokeLinecap="round"
               strokeLinejoin="round"
-              opacity="0.55"
-            />
-            <path
-              d="M790 468 L760 520 L735 585"
-              fill="none"
-              stroke="url(#vc-gold)"
-              strokeWidth="0.85"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.55"
-            />
-            <path
-              d="M720 420 L690 460 L660 505"
-              fill="none"
-              stroke="url(#vc-gold)"
-              strokeWidth="0.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.42"
+              opacity="0.75"
             />
 
             {/* Carmine pulse points */}
@@ -104,7 +100,7 @@ export function HeroSection() {
               <circle
                 cx="940"
                 cy="575"
-                r="2.2"
+                r="3.1"
                 className="vc-breath"
                 style={{ animationDuration: "5.6s" }}
                 fill="#960018"
@@ -112,7 +108,7 @@ export function HeroSection() {
               <circle
                 cx="860"
                 cy="520"
-                r="2.0"
+                r="2.9"
                 className="vc-breath"
                 style={{ animationDuration: "4.8s" }}
                 fill="#960018"
@@ -120,7 +116,7 @@ export function HeroSection() {
               <circle
                 cx="790"
                 cy="468"
-                r="2.0"
+                r="2.8"
                 className="vc-breath"
                 style={{ animationDuration: "5.2s" }}
                 fill="#960018"
@@ -128,7 +124,7 @@ export function HeroSection() {
               <circle
                 cx="720"
                 cy="420"
-                r="1.9"
+                r="2.7"
                 className="vc-breath"
                 style={{ animationDuration: "4.4s" }}
                 fill="#960018"
@@ -136,7 +132,7 @@ export function HeroSection() {
               <circle
                 cx="640"
                 cy="392"
-                r="1.8"
+                r="2.6"
                 className="vc-breath"
                 style={{ animationDuration: "6.0s" }}
                 fill="#960018"
@@ -144,7 +140,87 @@ export function HeroSection() {
               <circle
                 cx="560"
                 cy="372"
-                r="1.7"
+                r="2.4"
+                className="vc-breath"
+                style={{ animationDuration: "4.9s" }}
+                fill="#960018"
+              />
+            </g>
+
+            {/* Bottom-left pulses (to feel like it starts from lower-left) */}
+            <g>
+              <circle
+                cx="120"
+                cy="740"
+                r="3.2"
+                className="vc-breath"
+                style={{ animationDuration: "5.9s" }}
+                fill="#960018"
+              />
+              <circle
+                cx="220"
+                cy="680"
+                r="3.0"
+                className="vc-breath"
+                style={{ animationDuration: "4.6s" }}
+                fill="#960018"
+              />
+              <circle
+                cx="320"
+                cy="620"
+                r="2.9"
+                className="vc-breath"
+                style={{ animationDuration: "5.1s" }}
+                fill="#960018"
+              />
+              <circle
+                cx="420"
+                cy="560"
+                r="2.7"
+                className="vc-breath"
+                style={{ animationDuration: "4.3s" }}
+                fill="#960018"
+              />
+              <circle
+                cx="520"
+                cy="500"
+                r="2.6"
+                className="vc-breath"
+                style={{ animationDuration: "6.2s" }}
+                fill="#960018"
+              />
+            </g>
+
+            {/* Pulses near the extended up-left segment */}
+            <g>
+              <circle
+                cx="500"
+                cy="332"
+                r="2.8"
+                className="vc-breath"
+                style={{ animationDuration: "5.4s" }}
+                fill="#960018"
+              />
+              <circle
+                cx="400"
+                cy="262"
+                r="2.7"
+                className="vc-breath"
+                style={{ animationDuration: "4.7s" }}
+                fill="#960018"
+              />
+              <circle
+                cx="320"
+                cy="206"
+                r="2.6"
+                className="vc-breath"
+                style={{ animationDuration: "5.8s" }}
+                fill="#960018"
+              />
+              <circle
+                cx="280"
+                cy="166"
+                r="2.5"
                 className="vc-breath"
                 style={{ animationDuration: "4.9s" }}
                 fill="#960018"
@@ -159,7 +235,7 @@ export function HeroSection() {
         <div className="w-full">
           <div className="relative pt-[14svh] sm:pt-[16svh] lg:pt-[18svh]">
             <div className="max-w-[34rem]">
-              <div className="inline-flex items-center gap-3">
+              <div className="-mt-4 inline-flex items-center sm:-mt-6">
                 <span
                   className="rounded-full border border-[#B8A178]/45 bg-[#B8A178]/10 px-4 py-2 text-[10px] tracking-[0.35em] text-[#F2F2F2]/85"
                   style={{
@@ -170,12 +246,9 @@ export function HeroSection() {
                 >
                   {seminar.title}
                 </span>
-                <span className="text-[10px] tracking-[0.25em] text-[#F2F2F2]/55">
-                  更新 {seminar.updatedAt}
-                </span>
               </div>
               <h1
-                className="text-[#F2F2F2] font-extralight leading-[2] tracking-[0.48em]"
+                className="mt-10 text-[#F2F2F2] font-extralight leading-[2] tracking-[0.48em]"
                 style={{
                   fontFamily:
                     '"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS Mincho",serif',
@@ -191,24 +264,11 @@ export function HeroSection() {
                   fontFamily:
                     '"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS Mincho",serif',
                   fontWeight: 200,
-                  fontSize: "clamp(13px, 1.15vw, 16px)",
+                  fontSize: "clamp(15px, 1.35vw, 18px)",
                 }}
               >
                 薬に頼り続ける人生に、静かな違和感を覚えているあなたへ。
               </p>
-
-              <div className="mt-8 space-y-2 text-[11px] leading-[2] tracking-[0.22em] text-[#F2F2F2]/65">
-                <div>
-                  開催：{seminar.date}／{seminar.time}
-                </div>
-                <div>
-                  形式：{seminar.format}
-                  {seminar.venue ? `（${seminar.venue}）` : ""}
-                </div>
-                <div>
-                  参加費：{seminar.price}／定員：{seminar.capacity}
-                </div>
-              </div>
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
                 {isApplicationOpen ? (
@@ -276,19 +336,19 @@ export function HeroSection() {
           animation-name: vcBreath;
           animation-timing-function: ease-in-out;
           animation-iteration-count: infinite;
-          opacity: 0.48;
-          filter: drop-shadow(0 0 10px rgba(150, 0, 24, 0.55))
-            drop-shadow(0 0 18px rgba(150, 0, 24, 0.25));
+          opacity: 0.78;
+          filter: drop-shadow(0 0 14px rgba(200, 0, 32, 0.75))
+            drop-shadow(0 0 28px rgba(200, 0, 32, 0.35));
         }
         @keyframes vcBreath {
           0%,
           100% {
-            opacity: 0.35;
-            transform: scale(0.96);
+            opacity: 0.5;
+            transform: scale(0.9);
           }
           50% {
             opacity: 1;
-            transform: scale(1.16);
+            transform: scale(1.35);
           }
         }
       `}</style>
